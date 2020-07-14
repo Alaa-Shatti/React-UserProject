@@ -19,7 +19,7 @@ import './App.css';
           />
           <User
           Salary = "6000 TL"
-          Name = "Alaa Shatti"
+          Name = "Remzi Gunes"
           />
         </div>
         
