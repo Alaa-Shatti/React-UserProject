@@ -32,9 +32,18 @@ import propTypes from 'prop-types'
         onClickEvent (e) {
             console.log(string);
         }
-        */
+        
+        //nClickEvent Error Function yazilim sekli
         onClickEvent = (string, e) => {// e -> Event anlamina gelir
             console.log(string);
+        }
+        */
+       // Error Function Yazilim sekli
+       // Eger State true ise false'a donusecek false ise true ya donusecek
+        onClickEvent = (e) => {// e -> Event anlamina gelir
+            this.setState({
+            isVisible : !this.state.isVisible
+            })
         }
     render() {
         // Destructing
