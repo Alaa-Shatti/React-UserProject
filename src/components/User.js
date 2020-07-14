@@ -43,8 +43,12 @@ import propTypes from 'prop-types'
         onClickEvent = (e) => {// e -> Event anlamina gelir
             this.setState({
             isVisible : !this.state.isVisible
+            
             })
+            // control + option + l (turbo log eklentisi)
+            //console.log("User -> onClickEvent -> isVisible", this.state.isVisible)
         }
+        
     render() {
         // Destructing
         const {Name, Departmant, Salary} = this.props;
