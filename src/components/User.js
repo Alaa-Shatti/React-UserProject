@@ -45,7 +45,7 @@ import propTypes from 'prop-types'
             isVisible : !this.state.isVisible
             
             })
-            // control + option + l (turbo log eklentisi)
+            // isVisible isaretleyip control + option + l (turbo log eklentisi)
             //console.log("User -> onClickEvent -> isVisible", this.state.isVisible)
         }
         
