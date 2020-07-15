@@ -48,11 +48,17 @@ import propTypes from 'prop-types'
             // isVisible isaretleyip control + option + l (turbo log eklentisi)
             //console.log("User -> onClickEvent -> isVisible", this.state.isVisible)
         }
+
+        onDeleteUser = (e) => {
+            const{id} = this.props;
+            // Consumer Despatch gelecek
+        }
         
     render() {
         // Destructing
         const {Name, Departmant, Salary} = this.props;
         const {isVisible} = this.state;
+
         return (
             <div className = "col-md-8 mb-4">
                 <div className = "card">
@@ -83,6 +89,7 @@ User.defaultProps = {
 User.propTypes = {
     Name : propTypes.string.isRequired,
     Salary : propTypes.string.isRequired,
-    Departmant : propTypes.string.isRequired
+    Departmant : propTypes.string.isRequired,
+    id : propTypes.number.isRequired
 }
 export default User;
