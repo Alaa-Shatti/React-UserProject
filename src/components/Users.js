@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import User from "./User";
-import UserConsumer from "../components";
+import UserConsumer from "../context";
 
 class Users extends Component {
     render() {

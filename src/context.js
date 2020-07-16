@@ -4,6 +4,18 @@ import React, { Component } from 'react'
 // Provider ve Consumer Dödürür 
 const UserContext = React.createContext();
 
+const reducer = (state,action) => {
+    switch(action.type){
+        case "DELETE_USER":
+            return {
+                ...state,
+                users : state.users.filter(user => action.payload !== user.id) 
+            }
+        default :
+            return state
+    }
+}
+
 export class UserProvider extends Component {
 
     state = {
@@ -30,12 +42,18 @@ export class UserProvider extends Component {
             Salary : "7000 TL"
     
           }
-          ]
+          ],
+          despatch : actoin => {
+              // Guncellem işlemi gerçekleştiriliyor 
+              this.setState(state => reducer(state,actoin) )
+          }
+
     
        }
 
     render() {
         return (
+            // component
            <UserContext.Provider value = {this.state}>
                {this.props.children}
            </UserContext.Provider>

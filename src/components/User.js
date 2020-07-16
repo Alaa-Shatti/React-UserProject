@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import propTypes from 'prop-types'
+import UserConsumer from "../context"
+
  class User extends Component {
 
     // normal state olusturma
@@ -47,37 +49,52 @@ import propTypes from 'prop-types'
             })
             // isVisible isaretleyip control + option + l (turbo log eklentisi)
             //console.log("User -> onClickEvent -> isVisible", this.state.isVisible)
-        }
 
-        onDeleteUser = (e) => {
-            const{id} = this.props;
-            // Consumer Despatch gelecek
         }
+        onDeleteUser = (despatch, e) => {
+                const {id} = this.props;
+
+                // Consumer Despatch gelecek
+                despatch({type : "DELETE_USER" , payload : id})
+            }
         
     render() {
         // Destructing
         const {Name, Departmant, Salary} = this.props;
         const {isVisible} = this.state;
-
         return (
-            <div className = "col-md-8 mb-4">
-                <div className = "card">
-                    <div className = "card-header d-flex justify-content-between">
-                            <h4 className = "d-inline" onClick = {this.onClickEvent.bind(this, Name)}>{Name}</h4>
-                            <i className="fa fa-address-book" aria-hidden="true" style = {{cursor : "pointer"}}></i>
-                    </div>
-                    {
-                        isVisible ? <div className = "card-body">
-                        <p className = " card-text">Maas : {Salary}</p>
-                        <p className = " card-text">Departman : {Departmant}</p>
-                    </div>  : null
-                    }
-                    
-                </div>
-                
-            </div>
-            
+        <UserConsumer>
+            {
+                value => {
+                    const {despatch} = value;
+
+                    return (
+                        <div className = "col-md-8 mb-4">
+                            <div className = "card">
+                                <div className = "card-header d-flex justify-content-between">
+                                        <h4 className = "d-inline" onClick = {this.onClickEvent.bind(this)}>{Name}</h4>
+                                        <i onClick = {this.onDeleteUser.bind(this,despatch)} className="fa fa-trash-o" aria-hidden="true" style = {{cursor : "pointer"}}></i>
+                                </div>
+                                {
+                                    isVisible ? <div className = "card-body">
+                                    <p className = " card-text">Maas : {Salary}</p>
+                                    <p className = " card-text">Departman : {Departmant}</p>
+                                </div>  : null
+                                }
+                                
+                            </div>
+                            
+                        </div>
+                        
+                    )
+
+                }
+            }
+
+        </UserConsumer>
         )
+
+        
     }
 }
 /*// static default veya asagidaki sekilde yazilir
