@@ -70,7 +70,8 @@ import UserConsumer from "../context"
 
                     return (
                         <div className = "col-md-8 mb-4">
-                            <div className = "card">
+                                                     { /* Dinamic CSS Tanimlama */ }
+                            <div className = "card" style = {isVisible ? {backgroundColor : "#e5eefd", color : "blue"} : null}>
                                 <div className = "card-header d-flex justify-content-between">
                                         <h4 className = "d-inline" onClick = {this.onClickEvent.bind(this)}>{Name}</h4>
                                         <i onClick = {this.onDeleteUser.bind(this,despatch)} className="fa fa-trash-o" aria-hidden="true" style = {{cursor : "pointer"}}></i>

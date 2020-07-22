@@ -18,7 +18,7 @@ const Animation  = posed.div({
 
 class AddUser extends Component {
     state = {
-        visible : true,
+        visible : false,
         Name : "",
         Departmant : "",
         Salary : ""
