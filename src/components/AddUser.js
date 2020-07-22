@@ -44,6 +44,7 @@ class AddUser extends Component {
     //     })
     // }
 
+    // Text lerin icerisindeki degerleri almak icin kullanilan Method
     changeInput = (e) => {
         this.setState({
             [e.target.name] : e.target.value
@@ -64,7 +65,7 @@ class AddUser extends Component {
                                 <div className = "form-group">
                                     <label htmlFor ="name">Name</label>
                                     <input type = "text"
-                                    name = "name"
+                                    name = "Name"
                                     id = "id"
                                     placeholder  = "enter Name"
                                     className = "form-control"
@@ -75,7 +76,7 @@ class AddUser extends Component {
                                 <div className = "form-group">
                                     <label htmlFor ="departmant">Departmant</label>
                                     <input type = "text"
-                                    name = "departmant"
+                                    name = "Departmant"
                                     id = "departmant"
                                     placeholder  = "enter Departmant"
                                     className = "form-control"
@@ -86,7 +87,7 @@ class AddUser extends Component {
                                 <div className = "form-group">
                                     <label htmlFor ="salary">Salary</label>
                                     <input type = "text"
-                                    name = "salary"
+                                    name = "Salary"
                                     id = "salary"
                                     placeholder  = "enter Salary"
                                     className = "form-control"
