@@ -58,6 +58,10 @@ import UserConsumer from "../context"
                 // Consumer Despatch gelecek
                 dispatch({type : "DELETE_USER" , payload : id});
             }
+        // Bir Kullanici Silerken Calisir
+        componentWillUnmount() {
+            console.log("Component Will Unmount");
+        }
         
     render() {
         // Destructing

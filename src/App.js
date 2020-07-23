@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import Users from "./components/Users";
 import  AddUser from "./components/AddUser";
 import './App.css';
-import Test from "./components/Test";
+// import Test from "./components/Test";
 
  class App extends Component{
 
@@ -12,7 +12,10 @@ import Test from "./components/Test";
         return(
 
         <div className="container">
-          <Test test = "deneme"  />
+          {/* 
+          Test Clasini cagirma yazim sekli
+          <Test test = "deneme"  /> 
+          */}
           <Navbar title = "Users App"/>
           <hr/>
           <AddUser/>
