@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Navbar from "./components/Navbar";
-import Users from "./components/Users"
-import  AddUser from "./components/AddUser"
+import Users from "./components/Users";
+import  AddUser from "./components/AddUser";
 import './App.css';
+import Test from "./components/Test";
 
  class App extends Component{
 
@@ -11,6 +12,7 @@ import './App.css';
         return(
 
         <div className="container">
+          <Test test = "deneme"  />
           <Navbar title = "Users App"/>
           <hr/>
           <AddUser/>
