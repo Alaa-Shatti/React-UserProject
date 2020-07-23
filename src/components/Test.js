@@ -15,6 +15,15 @@ class Test extends Component {
             a : 20
         })
     }
+    componentDidUpdate(prevProps, prevState) {
+        console.log("ComponentDidUpdate");
+    }
+    shouldComponentUpdate(){
+        console.log("Should Component Update");
+        // return true ise isleme devam eder
+        // return false ise islemi burada bitirir
+        return true;
+    }
     render() {
         console.log("Render");
         return (
