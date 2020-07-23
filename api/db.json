@@ -20,6 +20,13 @@
             "Departmant" : "Bilisim",
             "Salary" : "7000 TL"
     
+          },
+          {
+            "id" : "unique-4",
+            "Name" : "Murat Turkmen",
+            "Departmant" : "Bilisim",
+            "Salary" : "7000 TL"
+    
           }
     ]
 }

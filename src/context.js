@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import axios from "axios";
 
 // Application de kullanilacak Context 
 // Provider ve Consumer Dödürür 
@@ -53,8 +54,14 @@ export class UserProvider extends Component {
               // Guncellem işlemi gerçekleştiriliyor 
               this.setState(state => reducer(state,actoin) )
           }
-
-    
+       }
+       componentDidMount = async () => {
+           const response = await axios.get("http://localhost:3004/users");
+           //console.log(response);
+           this.setState({
+               users : response.data
+           })
+           
        }
 
     render() {
