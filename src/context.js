@@ -26,27 +26,28 @@ export class UserProvider extends Component {
     state = {
 
         users : [
-          {
-            id : "unique-1",
-            Name : "Alaa Shatti",
-            Departmant : "Bilisim",
-            Salary : "5000 TL"
+            // Bu Veriler API den aliniyor api -> db.json
+        //   {
+        //     id : "unique-1",
+        //     Name : "Alaa Shatti",
+        //     Departmant : "Bilisim",
+        //     Salary : "5000 TL"
     
-        },
-          {
-            id : "unique-2",
-            Name : "Remzi Gunes",
-            Departmant : "Bilisim",
-            Salary : "6000 TL"
+        // },
+        //   {
+        //     id : "unique-2",
+        //     Name : "Remzi Gunes",
+        //     Departmant : "Bilisim",
+        //     Salary : "6000 TL"
     
-          },
-          {
-            id : "unique-3",
-            Name : "Mustafa Turkmen",
-            Departmant : "Bilisim",
-            Salary : "7000 TL"
+        //   },
+        //   {
+        //     id : "unique-3",
+        //     Name : "Mustafa Turkmen",
+        //     Departmant : "Bilisim",
+        //     Salary : "7000 TL"
     
-          }
+        //   }
           ],
           dispatch : actoin => {
               // Guncellem işlemi gerçekleştiriliyor 
