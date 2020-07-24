@@ -58,6 +58,7 @@ class AddUser extends Component {
         const {Name, Departmant, Salary} = this.state;
 
         const newUser = {
+            // Json server unique id otomatik olarak atiyor
            // id : uniqid(),
             Name,
             Departmant,
