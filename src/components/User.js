@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import propTypes from 'prop-types'
 import UserConsumer from "../context"
+import axios from "axios";
 
 
  class User extends Component {
@@ -52,16 +53,18 @@ import UserConsumer from "../context"
             //console.log("User -> onClickEvent -> isVisible", this.state.isVisible)
 
         }
-        onDeleteUser = (dispatch, e) => {
+        onDeleteUser = async (dispatch, e) => {
                 const {id} = this.props;
+                // Delete Request
+                await axios.delete(`http://localhost:3004/users/${id}`);
 
                 // Consumer Despatch gelecek
                 dispatch({type : "DELETE_USER" , payload : id});
             }
         // Bir Kullanici Silerken Calisir
-        componentWillUnmount() {
-            console.log("Component Will Unmount");
-        }
+        // componentWillUnmount() {
+        //     console.log("Component Will Unmount");
+        // }
         
     render() {
         // Destructing
