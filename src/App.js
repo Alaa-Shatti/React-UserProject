@@ -3,7 +3,8 @@ import Navbar from "./components/Navbar";
 import Users from "./components/Users";
 import  AddUser from "./components/AddUser";
 import './App.css';
-import {BrowserRouter as Router,Route} from "react-router-dom";
+import {BrowserRouter as Router,Route,Switch} from "react-router-dom";
+import NotFoundException from "./components/NotFoundException";
 // import Test from "./components/Test";
 
 const Home = () => {
@@ -26,8 +27,11 @@ const About = () => {
             <div className="container">
               <Navbar title = "Users App"/>
               <hr/>
+              <Switch>
               <Route exact path = "/" component = {Users}/>
               <Route exact path = "/add" component = {AddUser}/>
+              <Route component = {NotFoundException}/>
+              </Switch>
               {/* 
               Test Clasini cagirma yazim sekli
               <Test test = "deneme"  /> 
