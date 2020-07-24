@@ -17,6 +17,12 @@
       "Name": "Mustafa Turkmen",
       "Departmant": "Bilisim",
       "Salary": "7000 TL"
+    },
+    {
+      "Name": "Murat Turkmen",
+      "Departmant": "Bilisim",
+      "Salary": "6000",
+      "id": "O3vxIs5"
     }
   ]
 }
