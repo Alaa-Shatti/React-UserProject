@@ -23,6 +23,18 @@
       "Departmant": "Bilisim",
       "Salary": "6000",
       "id": "O3vxIs5"
+    },
+    {
+      "Name": "Mahmut",
+      "Departmant": "Bilisim",
+      "Salary": "7000",
+      "id": "3ptISiC"
+    },
+    {
+      "Name": "Mustafa",
+      "Departmant": "Bilisim",
+      "Salary": "8000 TL",
+      "id": "tqElumk"
     }
   ]
 }
