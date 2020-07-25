@@ -22,9 +22,9 @@ const Animation  = posed.div({
 class AddUser extends Component {
     state = {
         visible : false,
-        Name : "",
-        Departmant : "",
-        Salary : ""
+        name : "",
+        departmant : "",
+        salary : ""
     }
     changeVisibility = (e) => {
         this.setState({
@@ -55,18 +55,21 @@ class AddUser extends Component {
     }
     addUser = async (dispatch, e) => {
         e.preventDefault();
-        const {Name, Departmant, Salary} = this.state;
+        const {name, departmant, salary} = this.state;
 
         const newUser = {
             // Json server unique id otomatik olarak atiyor
            // id : uniqid(),
-            Name,
-            Departmant,
-            Salary,
+            name,
+            departmant,
+            salary,
         }
         const response = await axsios.post("http://localhost:3004/users", newUser);
         //console.log(newUser);
         dispatch({type : "ADD_USER", payload : response.data})
+
+        // Redirect
+        this.props.history.push("/");
     
     }
     render() {
@@ -88,7 +91,7 @@ class AddUser extends Component {
                                             <div className = "form-group">
                                                 <label htmlFor ="name">Name</label>
                                                 <input type = "text"
-                                                name = "Name"
+                                                name = "name"
                                                 id = "id"
                                                 placeholder  = "enter Name"
                                                 className = "form-control"
@@ -99,7 +102,7 @@ class AddUser extends Component {
                                             <div className = "form-group">
                                                 <label htmlFor ="departmant">Departmant</label>
                                                 <input type = "text"
-                                                name = "Departmant"
+                                                name = "departmant"
                                                 id = "departmant"
                                                 placeholder  = "enter Departmant"
                                                 className = "form-control"
@@ -110,7 +113,7 @@ class AddUser extends Component {
                                             <div className = "form-group">
                                                 <label htmlFor ="salary">Salary</label>
                                                 <input type = "text"
-                                                name = "Salary"
+                                                name = "salary"
                                                 id = "salary"
                                                 placeholder  = "enter Salary"
                                                 className = "form-control"

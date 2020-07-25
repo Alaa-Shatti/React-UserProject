@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import propTypes from 'prop-types'
 import UserConsumer from "../context"
 import axios from "axios";
+import {Link} from "react-router-dom";
 
 
  class User extends Component {
@@ -11,9 +12,9 @@ import axios from "axios";
          isVisible : false
      }
      static defaultProps = {
-        Name : "Bilgi Yok",
-        Departmant : "Bilgi Yok",
-        Salary : "Bilgi Yok"
+        name : "Bilgi Yok",
+        departmant : "Bilgi Yok",
+        salary : "Bilgi Yok"
      }
 
      // state constructor yazilim sekli
@@ -68,7 +69,7 @@ import axios from "axios";
         
     render() {
         // Destructing
-        const {Name, Departmant, Salary} = this.props;
+        const {id,name, departmant, salary} = this.props;
         const {isVisible} = this.state;
         return (
         <UserConsumer>
@@ -81,13 +82,14 @@ import axios from "axios";
                                                      { /* Dinamic CSS Tanimlama */ }
                             <div className = "card" style = {isVisible ? {backgroundColor : "#e5eefd", color : "blue"} : null}>
                                 <div className = "card-header d-flex justify-content-between">
-                                        <h4 className = "d-inline" onClick = {this.onClickEvent.bind(this)}>{Name}</h4>
+                                        <h4 className = "d-inline" onClick = {this.onClickEvent.bind(this)}>{name}</h4>
                                         <i onClick = {this.onDeleteUser.bind(this,dispatch)} className="fa fa-trash-o" aria-hidden="true" style = {{cursor : "pointer"}}></i>
                                 </div>
                                 {
                                     isVisible ? <div className = "card-body">
-                                    <p className = " card-text">Maas : {Salary}</p>
-                                    <p className = " card-text">Departman : {Departmant}</p>
+                                    <p className = " card-text">Maas : {salary}</p>
+                                    <p className = " card-text">Departman : {departmant}</p>
+                                    <Link to = {`edit/${id}`} className = "btn btn-primary btn-block">Update User</Link>
                                 </div>  : null
                                 }
                                 
@@ -113,9 +115,9 @@ User.defaultProps = {
     Salary : "Bilgi Yok"
 }*/
 User.propTypes = {
-    Name : propTypes.string.isRequired,
-    Salary : propTypes.string.isRequired,
-    Departmant : propTypes.string.isRequired,
+    name : propTypes.string.isRequired,
+    salary : propTypes.string.isRequired,
+    departmant : propTypes.string.isRequired,
     id : propTypes.string.isRequired
 }
 export default User;

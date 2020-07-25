@@ -1,40 +1,28 @@
 {
   "users": [
     {
-      "id": "unique-1",
-      "Name": "Alaa Shatti",
-      "Departmant": "Bilisim",
-      "Salary": "5000 TL"
+      "name": "Alaa SHATTI",
+      "departmant": "Bilisim",
+      "salary": "5000 TL",
+      "id": "unique-1"
     },
     {
       "id": "unique-2",
-      "Name": "Remzi Gunes",
-      "Departmant": "Bilisim",
-      "Salary": "6000 TL"
+      "name": "Remzi Gunes",
+      "departmant": "Bilisim",
+      "salary": "6000 TL"
     },
     {
-      "id": "unique-3",
-      "Name": "Mustafa Turkmen",
-      "Departmant": "Bilisim",
-      "Salary": "7000 TL"
+      "name": "Mustafa TURKMEN",
+      "departmant": "bilisim",
+      "salary": "5000",
+      "id": "0YYS-zt"
     },
     {
-      "Name": "Murat Turkmen",
-      "Departmant": "Bilisim",
-      "Salary": "6000",
-      "id": "O3vxIs5"
-    },
-    {
-      "Name": "Mahmut",
-      "Departmant": "Bilisim",
-      "Salary": "7000",
-      "id": "3ptISiC"
-    },
-    {
-      "Name": "Mustafa",
-      "Departmant": "Bilisim",
-      "Salary": "8000 TL",
-      "id": "tqElumk"
+      "name": "Murat TURKMENOGLU",
+      "departmant": "bilisim",
+      "salary": "6000 TL",
+      "id": "St04aP5"
     }
   ]
 }

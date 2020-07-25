@@ -18,9 +18,9 @@ class Users extends Component {
                                             <User
                                                 key = {user.id}
                                                 id = {user.id}
-                                                Name = {user.Name}
-                                                Salary = {user.Salary}
-                                                Departmant = {user.Departmant}
+                                                name = {user.name}
+                                                salary = {user.salary}
+                                                departmant = {user.departmant}
                                             />
                                         )
                                     })

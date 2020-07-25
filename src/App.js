@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import Navbar from "./layout/Navbar";
 import Users from "./components/Users";
-import  AddUser from "./components/AddUser";
+import  AddUser from "./forms/AddUser";
 import './App.css';
 import {BrowserRouter as Router,Route,Switch} from "react-router-dom";
 import NotFoundException from "./pages/NotFoundException";
 import Contribute from './pages/Contribute';
+import UpdateUser from "./forms/UpdateUser";
 
 // import Test from "./components/Test";
 
@@ -33,6 +34,7 @@ import Contribute from './pages/Contribute';
               <Route exact path = "/" component = {Users}/>
               <Route exact path = "/add" component = {AddUser}/>
               <Route exact path = "/github" component = {Contribute}/>
+              <Route exact  path = "/edit/:id" component = {UpdateUser}/>
               <Route component = {NotFoundException}/>
               </Switch>
               {/* 
