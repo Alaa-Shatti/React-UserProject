@@ -47,6 +47,14 @@ class AddUser extends Component {
     //     })
     // }
 
+    validateForm = () => {
+        const {name,departmant,salary} = this.state;
+        if (name === "" || departmant === "" || salary === ""){
+            return false;
+        }
+        return true;
+    }
+
     // Text lerin icerisindeki degerleri almak icin kullanilan Method
     changeInput = (e) => {
         this.setState({
@@ -64,6 +72,12 @@ class AddUser extends Component {
             departmant,
             salary,
         }
+        if (!this.validateForm()){
+            this.setState({
+                error : true
+            })
+            return;
+        }
         const response = await axsios.post("http://localhost:3004/users", newUser);
         //console.log(newUser);
         dispatch({type : "ADD_USER", payload : response.data})
@@ -73,7 +87,7 @@ class AddUser extends Component {
     
     }
     render() {
-        const {visible, name, salary, departmant} = this.state;
+        const {visible, name, salary, departmant, error} = this.state;
         return <UserConsumer>
             {
                 value => {
@@ -87,6 +101,13 @@ class AddUser extends Component {
                                         <h4>Add User Form</h4>
                                     </div>
                                     <div className = "card-body">
+                                        {
+                                            error ?
+                                            <div className = "alert alert-danger">
+                                                Lutfen Bilgilerinizi Kontroledin
+                                            </div>
+                                            : null
+                                        }
                                         <form onSubmit = {this.addUser.bind(this,dispatch)}>
                                             <div className = "form-group">
                                                 <label htmlFor ="name">Name</label>

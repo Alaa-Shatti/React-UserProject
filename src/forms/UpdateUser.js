@@ -7,7 +7,8 @@ class UpdateUser extends Component {
     state = {
         name : "",
         departmant : "",
-        salary : ""
+        salary : "",
+        error : false
     }
 
     // Text lerin icerisindeki degerleri almak icin kullanilan Method
@@ -41,14 +42,27 @@ class UpdateUser extends Component {
             departmant,
             salary
         };
+        if (!this.validateForm()){
+            this.setState({
+                error : true
+            })
+            return;
+        }
         //console.log(updatedUser);
         const response = await axsios.put(`http://localhost:3004/users/${id}`, updatedUser);
         dispatch({type : "UPDATE_USER" , payload : response.data});
         // Redirect
         this.props.history.push("/");
     }
+    validateForm = () => {
+        const {name,departmant,salary} = this.state;
+        if (name === "" || departmant === "" || salary === ""){
+            return false;
+        }
+        return true;
+    }
     render() {
-        const { name, salary, departmant} = this.state;
+        const { name, salary, departmant, error} = this.state;
         return <UserConsumer>
             {
                 value => {
@@ -60,6 +74,13 @@ class UpdateUser extends Component {
                                         <h4>Update User Form</h4>
                                     </div>
                                     <div className = "card-body">
+                                    {
+                                            error ?
+                                            <div className = "alert alert-danger">
+                                                Lutfen Bilgilerinizi Kontroledin
+                                            </div>
+                                            : null
+                                        }
                                         <form onSubmit = {this.updateUser.bind(this,dispatch)}>
                                             <div className = "form-group">
                                                 <label htmlFor ="name">Name</label>
@@ -75,7 +96,7 @@ class UpdateUser extends Component {
                                             <div className = "form-group">
                                                 <label htmlFor ="departmant">Departmant</label>
                                                 <input type = "text"
-                                                name = "Departmant"
+                                                name = "departmant"
                                                 id = "departmant"
                                                 placeholder  = "enter Departmant"
                                                 className = "form-control"
